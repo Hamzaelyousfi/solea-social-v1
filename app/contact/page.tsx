@@ -1,0 +1,274 @@
+'use client'
+
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { Mail, Phone, MapPin } from 'lucide-react'
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    budget: '',
+    projectType: '',
+    message: '',
+  })
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  })
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      budget: '',
+      projectType: '',
+      message: '',
+    })
+  }
+
+  return (
+    <main>
+      {/* Hero */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20 md:pt-0">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Parlons de votre <span className="text-accent">projet</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Vous êtes artisan ou PME ? Dites-nous comment nous pouvons vous aider à développer votre visibilité digitale.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section ref={ref} className="py-20 md:py-32 px-4 md:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+          {/* Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold mb-8">Envoyez-nous un message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                    Nom
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background"
+                    placeholder="votre@email.ch"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                    Entreprise
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background"
+                    placeholder="Votre entreprise"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                    Budget estimé (CHF)
+                  </label>
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background"
+                  >
+                    <option value="">Sélectionner un budget</option>
+                    <option value="under-2k">Moins de 2000 CHF</option>
+                    <option value="2-5k">2000 - 5000 CHF</option>
+                    <option value="5-15k">5000 - 15000 CHF</option>
+                    <option value="15k+">Plus de 15000 CHF</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                  Type de projet
+                </label>
+                <select
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background"
+                >
+                  <option value="">Sélectionner un type</option>
+                  <option value="social">Réseaux sociaux</option>
+                  <option value="seo">Stratégie & SEO</option>
+                  <option value="contenu">Création de contenu</option>
+                  <option value="audit">Audit digital</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 uppercase tracking-wider">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:outline-none transition-colors bg-background resize-none"
+                  placeholder="Parlez-nous de votre projet et vos besoins..."
+                ></textarea>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full px-8 py-4 bg-accent text-background font-bold rounded-lg hover:bg-accent/90 transition-colors uppercase text-sm tracking-wider"
+              >
+                Envoyer le message
+              </motion.button>
+            </form>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-12"
+          >
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Entrez en contact</h3>
+              <div className="space-y-6">
+                <a href="mailto:info@soleasocials.ch" className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted transition-colors group cursor-pointer">
+                  <Mail className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold group-hover:text-accent transition-colors">
+                      info@soleasocials.ch
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Vos demandes
+                    </p>
+                  </div>
+                </a>
+
+                <a href="tel:+41244462001" className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted transition-colors group cursor-pointer">
+                  <Phone className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold group-hover:text-accent transition-colors">
+                      +41 24 446 20 01
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Appelez-nous directement
+                    </p>
+                  </div>
+                </a>
+
+                <a href="tel:+41797000435" className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted transition-colors group cursor-pointer">
+                  <Phone className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold group-hover:text-accent transition-colors">
+                      +41 79 700 04 35
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Urgence ou question rapide
+                    </p>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-4 p-4 rounded-lg">
+                  <MapPin className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold mb-3">Notre siège</p>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <p>
+                        <span className="font-semibold text-foreground">Yverdon-les-Bains</span>
+                        <br />
+                        Rue des Champs-Lovats 13
+                        <br />
+                        1400 Yverdon-les-Bains, Suisse
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="p-6 border border-border rounded-lg">
+              <h4 className="font-semibold mb-4">Horaires de bureau</h4>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>Lundi - Vendredi : 09h00 - 18h00</p>
+                <p>Samedi - Dimanche : Fermé</p>
+                <p className="text-xs mt-4">Réponse aux messages sous 24h</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-muted/30">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Vous cherchez à nous rejoindre ?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Consultez notre page carrières pour découvrir nos opportunités et collaborations.
+          </p>
+        </motion.div>
+      </section>
+    </main>
+  )
+}
