@@ -49,7 +49,7 @@ export default function Hero() {
               <motion.span
                 key={word}
                 variants={wordVariants}
-                className="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight"
+                className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
               >
                 {word === 'l\'ombre' ? (
                   <span className="text-accent">{word}</span>

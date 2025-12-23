@@ -110,15 +110,20 @@ export default function ServicesSection() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60" />
-            <div className="relative z-10">
-              <p className="text-lg text-foreground/70 mb-6 max-w-2xl">
+            <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <p className="text-lg text-foreground/70 max-w-2xl">
                 Solea Socials accompagne les artisans et petites entreprises à devenir visibles et
                 reconnus en ligne. Stratégie, contenus, événements : nous prenons en charge ce qui
                 demande du temps pour que vous puissiez vous concentrer sur votre métier.
               </p>
-              <button className="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors">
-                Commencer maintenant
-              </button>
+              <div className="flex md:justify-end">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors"
+                >
+                  Commencer maintenant
+                </Link>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -126,3 +131,4 @@ export default function ServicesSection() {
     </Section>
   )
 }
+

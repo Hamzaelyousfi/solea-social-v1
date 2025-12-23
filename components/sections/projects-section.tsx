@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionTitle from '@/components/section-title'
@@ -50,17 +49,11 @@ const projects = [
   },
 ]
 
-const categories = ['Tous', 'Stratégie', 'Réseaux Sociaux']
-
 export default function ProjectsSection() {
-  const [selected, setSelected] = useState('Tous')
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   })
-
-  const filtered =
-    selected === 'Tous' ? projects : projects.filter((p) => p.category === selected)
 
   return (
     <section ref={ref} className="py-20 md:py-32 px-4 md:px-6 bg-muted/30">
@@ -69,30 +62,10 @@ export default function ProjectsSection() {
           title="Nos réalisations"
           subtitle="Découvrez comment nous aidons artisans et PME à développer leur présence digitale"
         />
-
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12 md:mb-16">
-          {categories.map((cat) => (
-            <motion.button
-              key={cat}
-              onClick={() => setSelected(cat)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 md:px-6 py-2 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
-                selected === cat
-                  ? 'bg-accent text-background'
-                  : 'border border-border hover:border-accent text-foreground'
-              }`}
-            >
-              {cat}
-            </motion.button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
+            {projects.map((project, i) => (
               <motion.div
                 key={project.id}
                 layout
@@ -138,3 +111,5 @@ export default function ProjectsSection() {
     </section>
   )
 }
+
+

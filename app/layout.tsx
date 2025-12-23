@@ -67,7 +67,10 @@ export default function RootLayout({
           }
         `}</style>
       </head>
-      <body className={`${spaceGrotesk.variable} ${inter.variable} ${playfairDisplay.variable} antialiased`}>
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} ${playfairDisplay.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <CustomCursor />
         <MotionConfig reducedMotion="user">
           <AnimatePresence mode="wait">

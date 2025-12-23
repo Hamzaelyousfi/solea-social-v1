@@ -62,7 +62,7 @@ export default function WorkPage() {
       </section>
 
       {/* Case Studies Grid */}
-      <section ref={ref} className="py-20 md:py-32 px-4 md:px-6">
+      <section ref={ref} className="pt-8 pb-20 md:pt-12 md:pb-32 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-12 md:space-y-20">
             {caseStudies.map((study, i) => (
@@ -72,57 +72,44 @@ export default function WorkPage() {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
                 transition={{ delay: i * 0.2, duration: 0.8 }}
               >
-                <Link
-                  href={`/work/${study.slug}`}
-                  className="group block"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    {/* Image */}
-                    <div className="relative overflow-hidden rounded-lg">
-                      <div className={`aspect-square bg-gradient-to-br ${study.color} relative`}>
-                        <motion.img
-                          src={study.image}
-                          alt={study.title}
-                          className="w-full h-full object-cover"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.6 }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div>
-                      <p className="text-sm uppercase tracking-widest text-accent mb-4">
-                        {study.category}
-                      </p>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-accent transition-colors">
-                        {study.title}
-                      </h3>
-
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-4 mb-8">
-                        {Object.entries(study.stats).map(([key, value]) => (
-                          <div key={key}>
-                            <p className="text-2xl font-bold text-accent">
-                              {value}
-                            </p>
-                            <p className="text-xs uppercase tracking-wider text-muted-foreground capitalize">
-                              {key}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-
-                      <motion.div
-                        whileHover={{ x: 8 }}
-                        className="inline-flex items-center gap-2 text-accent font-semibold uppercase text-sm tracking-wider"
-                      >
-                        Voir l'étude
-                        <ArrowRight size={18} />
-                      </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                  {/* Image */}
+                  <div className="relative overflow-hidden rounded-lg">
+                    <div className={`aspect-square bg-gradient-to-br ${study.color} relative`}>
+                      <motion.img
+                        src={study.image}
+                        alt={study.title}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.6 }}
+                      />
                     </div>
                   </div>
-                </Link>
+
+                  {/* Content */}
+                  <div className='group block'>
+                    <p className="text-sm uppercase tracking-widest text-accent mb-4">
+                      {study.category}
+                    </p>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-accent transition-colors">
+                      {study.title}
+                    </h3>
+
+                    {/* Stats */}
+                    <div className="grid grid-cols-3 gap-4 mb-8">
+                      {Object.entries(study.stats).map(([key, value]) => (
+                        <div key={key}>
+                          <p className="text-2xl font-bold text-accent">
+                            {value}
+                          </p>
+                          <p className="text-xs uppercase tracking-wider text-muted-foreground capitalize">
+                            {key}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -1,49 +1,31 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import SectionTitle from '@/components/section-title'
 
-const clients = [
-  { name: 'TechVenture', logo: '🚀' },
-  { name: 'Luna Beauty', logo: '✨' },
-  { name: 'Flow Studios', logo: '🎬' },
-  { name: 'Nexus Eco', logo: '🌿' },
-  { name: 'Pulse Marketing', logo: '📊' },
-  { name: 'Urban Design', logo: '🏙️' },
-]
+const clientLogos = ['Atelier Nova', 'Maison Sora', 'Valdore', 'Luna Hotels', 'Atelier des Cimes', 'TerraViva', 'Studio Folio']
 
 export default function ClientShowcase() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  })
-
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          title="Ils nous font confiance"
-          subtitle="Solea Socials accompagne artisans et petites entreprises en Suisse romande"
-        />
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-          {clients.map((client, i) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              whileHover={{ scale: 1.05, y: -4 }}
-              className="flex flex-col items-center justify-center p-6 rounded-lg border border-border hover:border-accent/50 transition-all duration-300 cursor-pointer"
-            >
-              <div className="text-4xl md:text-5xl mb-3">{client.logo}</div>
-              <p className="text-xs md:text-sm font-semibold text-center text-foreground/80">
-                {client.name}
-              </p>
-            </motion.div>
-          ))}
+    <section className="relative overflow-hidden px-6 py-24 sm:px-10 lg:px-24">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,_rgba(255,107,26,0.12)_0%,_transparent_55%)]" />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-12 rounded-[2.5rem] border border-white/20 bg-background/80 p-10 text-center backdrop-blur-3xl">
+        <p className="text-sm uppercase tracking-[0.4em] text-foreground/60">Ils nous font confiance</p>
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-16 whitespace-nowrap text-2xl font-semibold text-foreground/60"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+          >
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <span key={`${logo}-${index}`} className="uppercase tracking-[0.4em] text-foreground/30">
+                {logo}
+              </span>
+            ))}
+          </motion.div>
         </div>
+        <p className="mx-auto max-w-3xl text-lg text-foreground/70">
+          Des maisons artisanales, des start-ups et des acteurs institutionnels pilotent leurs campagnes avec Solea Socials pour beneficier d'une vision orchestree des contenus et des activations.
+        </p>
       </div>
     </section>
   )

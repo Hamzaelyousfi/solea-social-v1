@@ -63,11 +63,11 @@ const caseStudies: Record<string, any> = {
 }
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
-export default async function CaseStudyPage({ params }: PageProps) {
-  const { slug } = await params
+export default function CaseStudyPage({ params }: PageProps) {
+  const { slug } = params
   const study = caseStudies[slug] || caseStudies['boulangerie-lac']
 
   const { ref: challengeRef, inView: challengeInView } = useInView({

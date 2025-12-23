@@ -31,13 +31,13 @@ export default function Header() {
     <>
       {/* Desktop Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+        isScrolled ? 'bg-background' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6">
           <div className="flex items-center justify-between">
             {/* Logo - Now using Logo component instead of text */}
             <Link href="/" className="flex items-center">
-              <Logo variant="svg" />
+              <Logo variant="image" className="h-20 w-auto scale-125 origin-left" />
             </Link>
 
             {/* Desktop Navigation */}
