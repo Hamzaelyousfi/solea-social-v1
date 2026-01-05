@@ -84,7 +84,7 @@ export default function ProjectsSection() {
             >
               <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500">
                 <img
-                  src="/solea/DSC00412.jpg"
+                  src="/solea/DSC00412.JPG"
                   alt="Flexible et réactif"
                   className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -144,5 +144,6 @@ export default function ProjectsSection() {
     </Section>
   )
 }
+
 
 

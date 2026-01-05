@@ -34,7 +34,7 @@ export default function AboutFounderSection() {
             >
               <div className="relative rounded-3xl border-2 border-accent/15 shadow-2xl overflow-hidden group">
                 <img
-                  src="/solea/DSC00429.jpg"
+                  src="/solea/DSC00429.JPG"
                   alt="Fondatrice Solea Socials"
                   className="w-full h-[800px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -133,3 +133,4 @@ export default function AboutFounderSection() {
     </Section>
   )
 }
+

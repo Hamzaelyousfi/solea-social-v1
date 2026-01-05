@@ -30,7 +30,7 @@ export default function ClosingCTA() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/solea/DSC00467.jpg"
+          src="/solea/DSC00467.JPG"
           alt="Background"
           className="w-full h-full object-cover"
         />
@@ -94,3 +94,4 @@ export default function ClosingCTA() {
     </section>
   )
 }
+

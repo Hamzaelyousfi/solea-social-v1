@@ -111,7 +111,7 @@ export default function ServicesSection() {
               <div className="w-full md:w-2/5">
                 <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group">
                   <img
-                    src="/solea/DSC00488.jpg"
+                    src="/solea/DSC00488.JPG"
                     alt="Création de contenu professionnel"
                     className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />

@@ -13,7 +13,7 @@ const leadership = [
     name: 'Amandine Veillard',
     role: 'Fondatrice & consultante en communication digitale',
     location: 'Suisse romande',
-    image: '/solea/DSC00488.jpg',
+    image: '/solea/DSC00488.JPG',
     bio: 'J\'accompagne les artisans et les petites structures à clarifier leur message et à le traduire en contenus élégants, utiles et cohérents.',
   },
 ]
@@ -131,6 +131,7 @@ export default function TeamPage() {
     </main>
   )
 }
+
 
 
 

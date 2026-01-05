@@ -126,7 +126,7 @@ export default function HowItWorksSection() {
                 className="absolute top-0 left-0 w-4/5 rounded-2xl border-2 border-accent/10 shadow-xl overflow-hidden"
               >
                 <img
-                  src="/solea/DSC00506.jpg"
+                  src="/solea/DSC00506.JPG"
                   alt="Stratégie avec sticky notes"
                   className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -142,7 +142,7 @@ export default function HowItWorksSection() {
                 className="absolute bottom-0 right-0 w-3/5 rounded-2xl border-2 border-accent/10 shadow-xl overflow-hidden -rotate-3"
               >
                 <img
-                  src="/solea/DSC00452.jpg"
+                  src="/solea/DSC00452.JPG"
                   alt="Téléphone sur trépied"
                   className="w-full aspect-video object-cover hover:scale-135 transition-transform duration-700"
                 />
@@ -184,3 +184,4 @@ export default function HowItWorksSection() {
     </Section>
   )
 }
+

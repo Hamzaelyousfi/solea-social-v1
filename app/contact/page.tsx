@@ -64,7 +64,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden px-4 md:px-6 py-16 md:py-24">
         <div className="absolute inset-0">
           <img
-            src="/solea/DSC00456.jpg"
+            src="/solea/DSC00456.JPG"
             alt="Solea Socials"
             className="w-full h-full object-cover"
           />
@@ -378,3 +378,4 @@ export default function ContactPage() {
     </main>
   )
 }
+

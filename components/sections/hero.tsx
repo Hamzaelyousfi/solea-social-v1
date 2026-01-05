@@ -117,7 +117,7 @@ export default function Hero() {
           >
             <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 group w-full lg:w-[110%] lg:-mr-[10%]">
               <img
-                src="/solea/DSC00437.jpg"
+                src="/solea/DSC00437.JPG"
                 alt="Femme avec laptop, mur rouge"
                 className="w-full h-[460px] lg:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -135,7 +135,7 @@ export default function Hero() {
         >
           <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 group">
             <img
-              src="/solea/DSC00437.jpg"
+              src="/solea/DSC00437.JPG"
               alt="Femme avec laptop, mur rouge"
               className="w-full h-[350px] md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -155,3 +155,4 @@ export default function Hero() {
     </section>
   )
 }
+

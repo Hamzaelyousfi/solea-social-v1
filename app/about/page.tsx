@@ -32,7 +32,7 @@ const differentiators = [
       'Chez Solea Socials, vous travaillez directement avec moi, Amandine.',
       'Pas de templates génériques. Chaque projet reçoit une attention personnelle.',
     ],
-    image: '/solea/DSC00443.jpg',
+    image: '/solea/DSC00443.JPG',
     alt: 'Approche personnelle',
     imageOrder: 'md:order-2',
     textOrder: 'md:order-1',
@@ -43,7 +43,7 @@ const differentiators = [
       'Les clients veulent du vrai, pas du marketing agressif.',
       'Photos sur site, vidéos du processus, textes simples et authentiques.',
     ],
-    image: '/solea/DSC00473.jpg',
+    image: '/solea/DSC00473.JPG',
     alt: 'Contenu authentique',
     imageOrder: 'md:order-1',
     textOrder: 'md:order-2',
@@ -54,7 +54,7 @@ const differentiators = [
       'Audit initial gratuit, plan d\'action simple, suivi régulier.',
       'Vous gardez le contrôle, je m\'occupe de l\'exécution.',
     ],
-    image: '/solea/DSC00437.jpg',
+    image: '/solea/DSC00437.JPG',
     alt: 'Stratégie et résultats',
     imageOrder: 'md:order-2',
     textOrder: 'md:order-1',
@@ -93,7 +93,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/solea/DSC00456.jpg"
+            src="/solea/DSC00456.JPG"
             alt="Solea Socials"
             className="w-full h-full object-cover"
           />
@@ -145,7 +145,7 @@ export default function AboutPage() {
               >
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent/10 shadow-xl">
                   <img
-                    src="/solea/DSC00488.jpg"
+                    src="/solea/DSC00488.JPG"
                     alt="Amandine Veillard"
                     className="w-full h-full object-cover"
                   />
@@ -236,7 +236,7 @@ export default function AboutPage() {
           >
             <div className="aspect-video rounded-2xl overflow-hidden border-2 border-accent/20 shadow-2xl">
               <img
-                src="/solea/DSC00410.jpg"
+                src="/solea/DSC00410.JPG"
                 alt="Stratégie Solea Socials"
                 className="w-full h-full object-cover"
               />
@@ -467,7 +467,7 @@ export default function AboutPage() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden border-2 border-accent/10 shadow-2xl">
                 <img
-                  src="/solea/DSC00506.jpg"
+                  src="/solea/DSC00506.JPG"
                   alt="Vision Solea Socials"
                   className="w-full h-full object-cover"
                 />
@@ -520,3 +520,4 @@ export default function AboutPage() {
     </main>
   )
 }
+
