@@ -3,12 +3,11 @@ import { Space_Grotesk as SpaceGrotesk, Inter, Playfair_Display } from 'next/fon
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { MotionConfig, AnimatePresence } from 'framer-motion'
+import { Suspense } from 'react'
 import './globals.css'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import PageTransition from '@/components/page-transition'
 import Preloader from '@/components/preloader'
-import CustomCursor from '@/components/custom-cursor'
+import LayoutShell from '@/components/layout-shell'
+import PageviewTracker from '@/components/analytics/pageview-tracker'
 
 const spaceGrotesk = SpaceGrotesk({
   subsets: ['latin'],
@@ -71,16 +70,14 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} ${playfairDisplay.variable} antialiased`}
         suppressHydrationWarning
       >
-        <CustomCursor />
+        <Suspense fallback={null}>
+          <PageviewTracker />
+        </Suspense>
         <MotionConfig reducedMotion="user">
           <AnimatePresence mode="wait">
             <Preloader />
           </AnimatePresence>
-          <Header />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <Footer />
+          <LayoutShell>{children}</LayoutShell>
         </MotionConfig>
         <Analytics />
       </body>

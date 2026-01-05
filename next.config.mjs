@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+// Force webpack build when hosts set TURBOPACK=1 (fixes font module resolution).
+if (process.env.TURBOPACK) {
+  delete process.env.TURBOPACK
+}
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,

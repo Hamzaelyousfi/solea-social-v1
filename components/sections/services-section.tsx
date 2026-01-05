@@ -98,31 +98,64 @@ export default function ServicesSection() {
             ))}
           </div>
 
-          {/* Bottom CTA Section */}
+          {/* Content Creation Visual Section */}
           <motion.div
-            variants={fadeInUp}
-            className="mt-16 pt-12 border-t border-border/30 relative overflow-hidden rounded-2xl"
+            className="mt-16 relative"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
           >
-            <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
-              style={{
-                backgroundImage: "url('/artisans-craftspeople-workshop-digital-transformat.png')",
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60" />
-            <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <p className="text-lg text-foreground/70 max-w-2xl">
-                Solea Socials accompagne les artisans et petites entreprises à devenir visibles et
-                reconnus en ligne. Stratégie, contenus, événements : nous prenons en charge ce qui
-                demande du temps pour que vous puissiez vous concentrer sur votre métier.
-              </p>
-              <div className="flex md:justify-end">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors"
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Image - 40% */}
+              <div className="w-full md:w-2/5">
+                <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group">
+                  <img
+                    src="/solea/DSC00488.jpg"
+                    alt="Création de contenu professionnel"
+                    className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Text - 60% */}
+              <div className="w-full md:w-3/5">
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-3xl md:text-4xl font-bold mb-4 text-foreground"
                 >
-                  Commencer maintenant
-                </Link>
+                  Du contenu qui parle à vos clients
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-lg text-foreground/70 mb-6 leading-relaxed"
+                >
+                  Photos professionnelles, vidéos engageantes et textes authentiques qui reflètent vraiment votre savoir-faire artisanal.
+                </motion.p>
+                <motion.ul
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="space-y-3"
+                >
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span className="text-foreground/80">Shooting photo sur site</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span className="text-foreground/80">Vidéos courtes optimisées pour Instagram & TikTok</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span className="text-foreground/80">Textes qui racontent votre histoire</span>
+                  </li>
+                </motion.ul>
               </div>
             </div>
           </motion.div>
@@ -131,4 +164,3 @@ export default function ServicesSection() {
     </Section>
   )
 }
-

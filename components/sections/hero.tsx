@@ -25,8 +25,17 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1],
       },
+    },
+  }
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: { delay: 1.2, duration: 0.8 },
     },
   }
 
@@ -36,63 +45,109 @@ export default function Hero() {
       <div className="absolute top-10 right-10 w-40 h-40 bg-accent/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-20 left-10 w-60 h-60 bg-accent/3 rounded-full blur-3xl -z-10" />
 
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Main Heading */}
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
+          {/* Left Column - Text Content */}
+          <motion.div className="flex flex-col justify-center">
+            {/* Main Heading */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="mb-8 md:mb-12"
+            >
+              <div className="flex flex-wrap items-start gap-2 md:gap-3">
+                {words.map((word) => (
+                  <motion.span
+                    key={word}
+                    variants={wordVariants}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                  >
+                    {word === 'l\'ombre' ? (
+                      <span className="text-accent">{word}</span>
+                    ) : (
+                      word
+                    )}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Subheading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="mb-8 md:mb-12"
+            >
+              <p className="text-lg md:text-xl text-muted-foreground mb-2">
+                Nous gérons vos réseaux sociaux pendant que vous gérez votre métier
+              </p>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="mb-6 md:mb-8"
+            >
+              <Link href="/contact" className="inline-block px-8 py-4 bg-accent text-background font-bold rounded-full hover:bg-accent/90 transition-all duration-300 uppercase text-sm tracking-wider shadow-xl hover:shadow-2xl hover:scale-105">
+                Obtenir un audit gratuit
+              </Link>
+            </motion.div>
+
+            {/* Trust Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.3, duration: 0.8 }}
+              className="text-sm text-muted-foreground"
+            >
+              <p>✓ 15+ entreprises artisanales accompagnées en Suisse Romande</p>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Image */}
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+            className="hidden lg:block relative lg:pt-6"
+          >
+            <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 group w-full lg:w-[110%] lg:-mr-[10%]">
+              <img
+                src="/solea/DSC00437.jpg"
+                alt="Femme avec laptop, mur rouge"
+                className="w-full h-[460px] lg:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Mobile Image - Below Text on Small Screens */}
         <motion.div
-          variants={containerVariants}
+          variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className="mt-12 md:mt-16 mb-8 md:mb-12"
+          className="block lg:hidden mt-12 relative"
         >
-          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-            {words.map((word) => (
-              <motion.span
-                key={word}
-                variants={wordVariants}
-                className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
-              >
-                {word === 'l\'ombre' ? (
-                  <span className="text-accent">{word}</span>
-                ) : (
-                  word
-                )}
-              </motion.span>
-            ))}
+          <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500 group">
+            <img
+              src="/solea/DSC00437.jpg"
+              alt="Femme avec laptop, mur rouge"
+              className="w-full h-[350px] md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
           </div>
-        </motion.div>
-
-        {/* Subheading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="mb-12 md:mb-16"
-        >
-          <p className="text-lg md:text-xl text-muted-foreground mb-2">
-            Donnez plus de visibilité à votre savoir-faire local
-          </p>
-          <p className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground">
-            Scroll pour découvrir
-          </p>
-        </motion.div>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="mb-16 md:mb-20"
-        >
-          <Link href="/services" className="px-8 py-3 bg-accent text-background font-semibold rounded-full hover:bg-accent/90 transition-all duration-300 uppercase text-sm tracking-wider">
-            Voir les services
-          </Link>
         </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="inline-block"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 block lg:hidden"
         >
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </motion.div>

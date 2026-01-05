@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 export default function Preloader() {
   const [isActive, setIsActive] = useState(true)
+  const pathname = usePathname()
+  const isAdmin = pathname?.startsWith('/admin')
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,7 +17,7 @@ export default function Preloader() {
     return () => clearTimeout(timer)
   }, [])
 
-  if (!isActive) return null
+  if (isAdmin || !isActive) return null
 
   return (
     <motion.div

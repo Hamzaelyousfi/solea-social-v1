@@ -10,11 +10,11 @@ import { Mail, Linkedin } from 'lucide-react'
 const leadership = [
   {
     id: 1,
-    name: 'Sophie Moreau',
-    role: 'Fondatrice & Directrice Strategie',
-    location: 'Yverdon-les-Bains',
-    image: '/placeholder.svg?key=sophie',
-    bio: 'Experte en communication digitale avec 8+ ans d\'experience. Accompagnement sur-mesure pour artisans et PME.',
+    name: 'Amandine Veillard',
+    role: 'Fondatrice & consultante en communication digitale',
+    location: 'Suisse romande',
+    image: '/solea/DSC00488.jpg',
+    bio: 'J\'accompagne les artisans et les petites structures à clarifier leur message et à le traduire en contenus élégants, utiles et cohérents.',
   },
 ]
 export default function TeamPage() {
@@ -34,10 +34,10 @@ export default function TeamPage() {
           className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            La <span className="text-accent">fondatrice</span> Solea Socials
+            Incarner <span className="text-accent">Solea Socials</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Une fondatrice independante, proche de ses clients et specialisee en communication digitale pour artisans et PME.
+            Je m'appelle Amandine. Derrière Solea Socials, il y a une seule personne, une seule voix et un lien direct avec chaque projet.
           </p>
         </motion.div>
       </section>
@@ -45,7 +45,11 @@ export default function TeamPage() {
       {/* Leadership */}
       <section ref={leadershipRef} className="py-20 md:py-32 px-4 md:px-6 bg-muted/30">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle title="Fondatrice" subtitle="Une seule interlocutrice, un accompagnement sur-mesure" />
+          <SectionTitle title="Mon histoire" subtitle="Une trajectoire simple, des convictions profondes" />
+
+          <p className="max-w-3xl mx-auto text-center text-base md:text-lg text-muted-foreground leading-relaxed mb-12">
+            Avant d'être CM, j'étais une fille qui filmait pour créer des souvenirs : voyages, couchers de soleil, moments simples. Puis je me suis dit : si je peux créer par passion pour moi, pourquoi pas pour les autres ? Cette envie est devenue un métier, puis une agence, avec une ligne claire : rester proche, sincère et attentive aux détails.
+          </p>
 
           <div className="grid grid-cols-1 gap-8 md:gap-12 max-w-3xl mx-auto">
             {leadership.map((member, i) => (
@@ -105,13 +109,13 @@ export default function TeamPage() {
             Ma vision
           </h2>
           <p className="text-lg text-background/80 mb-8 leading-relaxed">
-            Je privilege une approche humaine et pedagogique. Un seul contact, une ecoute attentive, et des actions utiles.
+            Une communication qui ressemble à celles et ceux qu\'elle raconte : authentique, simple et inspirée. Je préfère le dialogue aux grandes promesses, la création au bruit, et la relation dans la durée.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {[
-              { title: 'Proximite', desc: 'Proche de mes clients, ancree dans leurs realites locales' },
-              { title: 'Pedagogie', desc: "J'explique, je n'impose pas. Transparence totale" },
-              { title: 'Impact', desc: 'Des actions utiles, des resultats mesurables' },
+              { title: 'Authenticité', desc: 'Une parole vraie, sans artifices, avec respect pour chaque histoire' },
+              { title: 'Proximité', desc: 'Un accompagnement attentif, et une présence à chaque étape' },
+              { title: 'Création', desc: 'Des contenus pensés avec passion, pour marquer sans surjouer' },
             ].map((item, i) => (
               <div key={i} className="p-6 bg-background/10 rounded-lg">
                 <h3 className="font-bold mb-2">{item.title}</h3>
@@ -119,6 +123,9 @@ export default function TeamPage() {
               </div>
             ))}
           </div>
+          <p className="text-base md:text-lg text-background/80 mt-10">
+            Je crois à la force des choses bien faites, et à la beauté des liens simples.
+          </p>
         </motion.div>
       </section>
     </main>

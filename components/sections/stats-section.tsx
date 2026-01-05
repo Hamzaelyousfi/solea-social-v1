@@ -6,10 +6,10 @@ import { useInView } from 'react-intersection-observer'
 import SectionTitle from '@/components/section-title'
 
 const stats = [
-  { label: 'Entreprises accompagnées', value: 45 },
-  { label: 'Visibilité augmentée', value: 250, suffix: '%' },
-  { label: 'Projets réussis', value: 120 },
-  { label: 'Clients satisfaits', value: 100, suffix: '%' },
+  { label: 'Entreprises accompagnées', value: 15 },
+  { label: 'Visibilité augmentée', value: 180, suffix: '%' },
+  { label: 'Mois pour voir résultats', value: 3 },
+  { label: 'Clients Suisse Romande', value: 100, suffix: '%' },
 ]
 
 const Counter = ({ target, suffix = '' }: { target: number; suffix?: string }) => {
