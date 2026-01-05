@@ -162,7 +162,7 @@ export default function HowItWorksSection() {
                 className="rounded-2xl border-2 border-accent/10 shadow-xl overflow-hidden"
               >
                 <img
-                  src="/data-analytics-dashboard.png"
+                  src="/solea/DSC00506.JPG"
                   alt="Stratégie avec sticky notes"
                   className="w-full h-[300px] object-cover"
                 />
@@ -172,7 +172,7 @@ export default function HowItWorksSection() {
                 className="rounded-2xl border-2 border-accent/10 shadow-xl overflow-hidden"
               >
                 <img
-                  src="/creative-studio-content.jpg"
+                  src="/solea/DSC00452.JPG"
                   alt="Téléphone sur trépied"
                   className="w-full h-[250px] object-cover"
                 />
