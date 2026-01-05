@@ -47,15 +47,23 @@ export function createAdminSessionToken(userId: string, email: string) {
   return `${encoded}.${signature}`
 }
 
-export function getSessionCookieOptions() {
+export function getSessionCookieOptions(secureOverride?: boolean) {
   return {
     name: SESSION_COOKIE,
     httpOnly: true,
     path: '/',
     sameSite: 'lax' as const,
-    secure: process.env.NODE_ENV === 'production',
+    secure: typeof secureOverride === 'boolean' ? secureOverride : process.env.NODE_ENV === 'production',
     maxAge: SESSION_TTL_SECONDS,
   }
+}
+
+export function isHttpsRequest(request: Request) {
+  const forwarded = request.headers.get('x-forwarded-proto')
+  if (forwarded) {
+    return forwarded.split(',')[0]?.trim() === 'https'
+  }
+  return new URL(request.url).protocol === 'https:'
 }
 
 export async function verifyAdminSession(token: string) {

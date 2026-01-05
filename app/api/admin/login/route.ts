@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { prisma } from '@/lib/prisma'
-import { createAdminSessionToken, getSessionCookieOptions, verifyPassword } from '@/lib/auth'
+import { createAdminSessionToken, getSessionCookieOptions, isHttpsRequest, verifyPassword } from '@/lib/auth'
 
 export const runtime = 'nodejs'
 
@@ -28,6 +28,7 @@ export async function POST(request: Request) {
 
   const token = createAdminSessionToken(admin.id, admin.email)
   const response = NextResponse.json({ ok: true })
-  response.cookies.set(getSessionCookieOptions().name, token, getSessionCookieOptions())
+  const isSecure = isHttpsRequest(request)
+  response.cookies.set(getSessionCookieOptions(isSecure).name, token, getSessionCookieOptions(isSecure))
   return response
 }

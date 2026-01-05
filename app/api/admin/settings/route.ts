@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { cookies } from 'next/headers'
 import { prisma } from '@/lib/prisma'
-import { createAdminSessionToken, getSessionCookieOptions, hashPassword, verifyAdminSession } from '@/lib/auth'
+import { createAdminSessionToken, getSessionCookieOptions, hashPassword, isHttpsRequest, verifyAdminSession } from '@/lib/auth'
 
 export const runtime = 'nodejs'
 
@@ -43,6 +43,7 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  const isSecure = isHttpsRequest(request)
   const payload = await request.json()
   const parsed = settingsSchema.safeParse(payload)
   if (!parsed.success) {
@@ -67,7 +68,7 @@ export async function PATCH(request: Request) {
   const response = NextResponse.json({ data: admin })
   if (parsed.data.email && parsed.data.email !== session.email) {
     const token = createAdminSessionToken(admin.id, admin.email)
-    response.cookies.set(getSessionCookieOptions().name, token, getSessionCookieOptions())
+    response.cookies.set(getSessionCookieOptions(isSecure).name, token, getSessionCookieOptions(isSecure))
   }
 
   return response

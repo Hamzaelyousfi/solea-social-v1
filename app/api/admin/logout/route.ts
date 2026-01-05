@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server'
-import { getSessionCookieOptions } from '@/lib/auth'
+import { getSessionCookieOptions, isHttpsRequest } from '@/lib/auth'
 
 export const runtime = 'nodejs'
 
 export async function POST(request: Request) {
   const response = NextResponse.redirect(new URL('/admin/login', request.url))
-  response.cookies.set(getSessionCookieOptions().name, '', {
-    ...getSessionCookieOptions(),
+  const isSecure = isHttpsRequest(request)
+  response.cookies.set(getSessionCookieOptions(isSecure).name, '', {
+    ...getSessionCookieOptions(isSecure),
     maxAge: 0,
   })
   return response
