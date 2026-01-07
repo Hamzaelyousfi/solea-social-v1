@@ -19,7 +19,7 @@ const benefits = [
   {
     icon: '💡',
     title: 'Approche Authentique',
-    description: 'Pas de robots, pas de templates généricités. Chaque stratégie et contenu est personnalisé pour votre marque unique.',
+    description: 'Pas de robots, pas de templates générés par IA. Chaque stratégie et contenu est personnalisé pour votre marque unique.',
   },
 ]
 
