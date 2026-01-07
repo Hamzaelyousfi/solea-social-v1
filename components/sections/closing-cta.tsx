@@ -57,7 +57,7 @@ export default function ClosingCTA() {
         <motion.p
           {...fadeInAnimations}
           transition={{ ...fadeInAnimations.transition, delay: 0.2 }}
-          className="text-sm text-accent font-medium mb-10"
+          className="text-lg text-accent font-serif font-bold mb-10"
         >
           ⚡ Places limitées • 3 nouveaux clients par mois maximum
         </motion.p>
