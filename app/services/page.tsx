@@ -4,12 +4,12 @@ import ServicesView from '@/components/pages/services-view'
 export const metadata: Metadata = {
   title: 'Nos Services | Solea Socials',
   description:
-    'Decouvrez les services premium de Solea Socials : strategie & audit digital, creation de contenus et accompagnement evenementiel pour propulser votre marque en Suisse romande.',
+    'Découvrez les services premium de Solea Socials : stratégie & audit digital, création de contenus et accompagnement événementiel pour propulser votre marque en Suisse romande.',
   openGraph: {
     title: 'Nos Services | Solea Socials',
     description:
-      'Des solutions digitales completes : audit, creation et accompagnement pour artisans, PME et marques premium.',
-    url: 'https://solea-socials.com/services',
+      'Des solutions digitales complètes : audit, création et accompagnement pour artisans, PME et marques premium.',
+    url: 'https://soleasocials.ch/services',
     type: 'website',
   },
 }
@@ -22,7 +22,7 @@ const jsonLd = {
   provider: {
     '@type': 'Organization',
     name: 'Solea Socials',
-    url: 'https://solea-socials.com',
+    url: 'https://soleasocials.ch',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -32,21 +32,21 @@ const jsonLd = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Strategie & Audit Digital',
+          name: 'Stratégie & Audit Digital',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Creation & Gestion de Contenus',
+          name: 'Création & Gestion de Contenus',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Evenements & Accompagnement',
+          name: 'Événements & Accompagnement',
         },
       },
     ],

@@ -23,10 +23,10 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-wider mb-4">Navigation</h4>
             <ul className="space-y-2">
               {[
-                { label: 'Réalisations', href: '/work' },
-                { label: 'À propos', href: '/about' },
-                { label: 'Équipe', href: '/team' },
-                { label: 'Carrières', href: '/careers' },
+                { label: 'Services', href: '/services' },
+                { label: 'Notre Approche', href: '/work' },
+                { label: 'A propos', href: '/about' },
+                { label: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-background/80 hover:text-background transition-colors">
@@ -79,10 +79,6 @@ export default function Footer() {
         <div className="border-t border-background/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-background/60">
             <p>&copy; {currentYear} Solea Socials. Tous droits réservés.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-background transition-colors">Politique de confidentialité</Link>
-              <Link href="#" className="hover:text-background transition-colors">Conditions d'utilisation</Link>
-            </div>
           </div>
         </div>
       </div>

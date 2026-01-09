@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import Link from 'next/link'
 import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion'
@@ -23,13 +23,13 @@ type ServiceCardContent = {
 const services: ServiceCardContent[] = [
   {
     id: '01',
-    title: 'Strategie & Audit Digital',
+    title: 'Stratégie & Audit Digital',
     description:
-      'Elaborez une strategie digitale personnalisee grace a nos audits de presence en ligne, nos analyses de performance et nos plans editoriaux adaptes a vos objectifs business.',
+      'Élaborez une stratégie digitale personnalisée grâce à nos audits de présence en ligne, nos analyses de performance et nos plans éditoriaux adaptés à vos objectifs business.',
     features: [
-      'Audit complet de presence en ligne',
+      'Audit complet de présence en ligne',
       'Analyse de performance & insights',
-      'Planification strategique trimestrielle',
+      'Planification stratégique trimestrielle',
       'Veille concurrentielle continue',
     ],
     tag: 'Audit premium',
@@ -39,29 +39,29 @@ const services: ServiceCardContent[] = [
   },
   {
     id: '02',
-    title: 'Creation & Gestion de Contenus',
+    title: 'Création & Gestion de Contenus',
     description:
-      'Nous produisons photos, videos et textes qui incarnent votre marque. Chaque contenu est optimise pour votre audience, votre SEO et vos campagnes sociales.',
+      'Nous produisons photos, vidéos et textes qui incarnent votre marque. Chaque contenu est optimisé pour votre audience, votre SEO et vos campagnes sociales.',
     features: [
-      'Creation de contenus visuels',
-      'Redaction et SEO editorial',
-      'Calendrier editorial pilote',
+      'Création de contenus visuels',
+      'Rédaction et SEO éditorial',
+      'Calendrier éditorial pilote',
       'Community management premium',
     ],
     tag: 'Studios',
-    cta: { label: 'Decouvrir', href: '/work' },
+    cta: { label: 'Découvrir', href: '/work' },
     accent: 'from-amber-200/60 to-accent/60',
     background: 'bg-gradient-to-br from-secondary/40 via-white to-background',
   },
   {
     id: '03',
-    title: 'Evenements & Accompagnement',
+    title: 'Événements & Accompagnement',
     description:
-      "Beneficiez d'un accompagnement personnalise pour vos lancements, salons et campagnes locales afin d'offrir des experiences phygitales memorables.",
+      "Bénéficiez d'un accompagnement personnalisé pour vos lancements, salons et campagnes locales afin d'offrir des expériences phygitales mémorables.",
     features: [
-      'Accompagnement evenementiel',
+      'Accompagnement événementiel',
       'Campagnes digitales locales',
-      'Strategie 360° sur mesure',
+      'Stratégie 360° sur mesure',
     ],
     tag: 'Live',
     cta: { label: 'Planifier', href: '/contact' },
@@ -72,11 +72,11 @@ const services: ServiceCardContent[] = [
     id: '04',
     title: 'Graphisme & Design',
     description:
-      "Creation d'une identite visuelle de marque, branding et supports graphiques coherents pour valoriser votre univers.",
+      "Création d'une identité visuelle de marque, branding et supports graphiques cohérents pour valoriser votre univers.",
     features: [
-      'Identite visuelle & logo',
+      'Identité visuelle & logo',
       'Branding & charte graphique',
-      'Templates pour reseaux sociaux',
+      'Templates pour réseaux sociaux',
       'Supports print & digitaux',
     ],
     tag: 'Design',
@@ -89,35 +89,35 @@ const services: ServiceCardContent[] = [
 const processSteps = [
   {
     title: 'Immersion',
-    copy: 'Consultation initiale, comprehension de votre metier, identification des points bloquants.',
+    copy: 'Consultation initiale, compréhension de votre métier, identification des points bloquants.',
     duration: 'Semaine 01',
   },
   {
-    title: 'Strategie',
-    copy: 'Audit, positionnement et feuille de route operationnelle sur 90 jours.',
+    title: 'Stratégie',
+    copy: 'Audit, positionnement et feuille de route opérationnelle sur 90 jours.',
     duration: 'Semaines 02-03',
   },
   {
-    title: 'Creation',
-    copy: 'Production des contenus, preparation des assets, raffinage des messages cles.',
+    title: 'Création',
+    copy: 'Production des contenus, préparation des assets, raffinage des messages clés.',
     duration: 'Semaines 04-07',
   },
   {
     title: 'Activation',
-    copy: 'Deploiement multi-plateformes, automatisations et reporting live.',
+    copy: 'Déploiement multi-plateformes, automatisations et reporting live.',
     duration: 'Semaines 08-09',
   },
   {
     title: 'Suivi',
-    copy: 'Optimisation continue, ateliers internes et nouvelles opportunites de croissance.',
+    copy: 'Optimisation continue, ateliers internes et nouvelles opportunités de croissance.',
     duration: 'Continu',
   },
 ]
 
 const heroHighlights = [
-  { title: '+120%', copy: 'de portee moyenne apres 3 mois' },
-  { title: '15', copy: 'marques accompagnees en 2024' },
-  { title: '360°', copy: 'vision strategique & creative' },
+  { title: '+120%', copy: 'de portée moyenne après 3 mois' },
+  { title: '2', copy: 'marques accompagnées en 2025' },
+  { title: '360°', copy: 'vision stratégique & créative' },
 ]
 
 const gradientMask =
@@ -178,7 +178,7 @@ export default function ServicesView() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl font-black uppercase leading-tight sm:text-6xl lg:text-7xl"
         >
-          Des solutions digitales completes
+          Des solutions digitales complètes
           <br className="hidden sm:block" /> pour propulser votre marque
         </motion.h1>
         <motion.p
@@ -187,8 +187,8 @@ export default function ServicesView() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="mt-6 max-w-3xl text-base text-foreground/70 sm:text-lg"
         >
-          Solea Socials orchestre strategie, creation et activation avec un niveau de precision digne des studios les plus exigeants.
-          Inspirez, engagez et convertissez grace a des experiences digitales immersives.
+          Solea Socials orchestre stratégie, création et activation avec un niveau de précision digne des studios les plus exigeants.
+          Inspirez, engagez et convertissez grâce à des expériences digitales immersives.
         </motion.p>
 
         <motion.div
@@ -230,7 +230,7 @@ export default function ServicesView() {
             <div>
               <p className="text-sm uppercase tracking-[0.4em] text-foreground/50">Notre Processus</p>
               <h2 className="mt-4 text-3xl font-black uppercase leading-tight text-foreground sm:text-5xl">
-                Une trajectoire maitrisee, du brief jusqu'au suivi continu
+                Une trajectoire maîtrisée, du brief jusqu'au suivi continu
               </h2>
             </div>
             <div className="space-y-10">
@@ -249,10 +249,10 @@ export default function ServicesView() {
           <div className="rounded-[3rem] bg-background px-10 py-16 text-center sm:px-16">
             <p className="text-sm uppercase tracking-[0.4em] text-foreground/60">Travaillons ensemble</p>
             <h2 className="mt-6 text-4xl font-black uppercase leading-tight text-foreground sm:text-5xl">
-              Pret a transformer votre presence digitale ?
+              Prêt à transformer votre présence digitale ?
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base text-foreground/80 sm:text-lg">
-              Reservez une session strategique avec notre equipe pour cartographier vos priorites et activer la bonne combinaison de services.
+              Réservez une session stratégique avec notre équipe pour cartographier vos priorités et activer la bonne combinaison de services.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
@@ -266,7 +266,7 @@ export default function ServicesView() {
                 href="/work"
                 className="inline-flex items-center gap-3 rounded-full border border-foreground/30 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-foreground transition hover:border-foreground hover:text-foreground"
               >
-                Voir nos realisations
+                Voir nos réalisations
               </Link>
             </div>
           </div>
@@ -346,9 +346,9 @@ function ServiceMediaMock({ id, accent, reverse }: { id: string; accent: string;
               <p className="mt-2 text-3xl font-black">360°</p>
             </div>
             <div className="space-y-3 text-sm text-black/70">
-              <p>Visibilite locale</p>
+              <p>Visibilité locale</p>
               <p>Positionnement</p>
-              <p>Mix media</p>
+              <p>Mix média</p>
             </div>
           </div>
         </motion.div>
@@ -368,7 +368,7 @@ function ServiceMediaMock({ id, accent, reverse }: { id: string; accent: string;
         >
           <p className="text-sm uppercase tracking-[0.3em] text-foreground/60">Calendrier</p>
           <div className="mt-4 space-y-3">
-            {['Lundi - preview atelier', 'Mercredi - etude matieres', 'Vendredi - live Q&A'].map((item) => (
+            {['Lundi - preview atelier', 'Mercredi - étude matières', 'Vendredi - live Q&A'].map((item) => (
               <div key={item} className="rounded-2xl bg-white/60 px-4 py-3 text-sm font-semibold text-foreground/80">
                 {item}
               </div>
@@ -384,7 +384,7 @@ function ServiceMediaMock({ id, accent, reverse }: { id: string; accent: string;
         >
           <p className="text-xs uppercase tracking-[0.3em] text-foreground/60">Stories pack</p>
           <div className="mt-4 space-y-3">
-            {['Avant / Apres', 'Gros plan produit', 'Call-to-action'].map((item) => (
+            {['Avant / Après', 'Gros plan produit', 'Call-to-action'].map((item) => (
               <div key={item} className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2 text-xs font-semibold text-foreground/70">
                 <span>{item}</span>
               </div>
@@ -409,7 +409,7 @@ function ServiceMediaMock({ id, accent, reverse }: { id: string; accent: string;
             <span>Design</span>
           </div>
           <div className="mt-6 space-y-4">
-            {['Logo & identite', 'Charte graphique', 'Templates reseaux sociaux'].map((item, index) => (
+            {['Logo & identité', 'Charte graphique', 'Templates réseaux sociaux'].map((item, index) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, x: -20 }}
@@ -433,11 +433,11 @@ function ServiceMediaMock({ id, accent, reverse }: { id: string; accent: string;
         viewport={{ once: true, margin: '-20%' }}
       >
         <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-foreground/60">
-          <span>Evenement</span>
+          <span>Événement</span>
           <span>Live</span>
         </div>
         <div className="mt-6 space-y-4">
-          {['Brief & scenographie', 'Activation social live', 'Wrap-up & donnees'].map((item, index) => (
+          {['Brief & scénographie', 'Activation social live', 'Wrap-up & données'].map((item, index) => (
             <motion.div
               key={item}
               initial={{ opacity: 0, x: -20 }}
@@ -509,7 +509,7 @@ function AnimatedCounter({ value }: { value: number }) {
   }, [isInView, motionValue, value])
 
   return (
-    <span ref={ref} aria-label={`Etape ${displayValue}`} className="text-2xl font-black text-foreground">
+    <span ref={ref} aria-label={`Étape ${displayValue}`} className="text-2xl font-black text-foreground">
       {displayValue.toString().padStart(2, '0')}
     </span>
   )

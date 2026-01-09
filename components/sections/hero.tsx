@@ -50,13 +50,13 @@ export default function Hero() {
           {/* Left Column - Text Content */}
           <motion.div className="flex flex-col justify-center">
             {/* Main Heading */}
-            <motion.div
+            <motion.h1
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               className="mb-8 md:mb-12"
             >
-              <div className="flex flex-wrap items-start gap-2 md:gap-3">
+              <span className="flex flex-wrap items-start gap-2 md:gap-3">
                 {words.map((word) => (
                   <motion.span
                     key={word}
@@ -70,8 +70,8 @@ export default function Hero() {
                     )}
                   </motion.span>
                 ))}
-              </div>
-            </motion.div>
+              </span>
+            </motion.h1>
 
             {/* Subheading */}
             <motion.div

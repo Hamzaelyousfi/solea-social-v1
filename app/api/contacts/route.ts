@@ -1,8 +1,17 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
+import { cookies } from 'next/headers'
 import { prisma } from '@/lib/prisma'
+import { verifyAdminSession } from '@/lib/auth'
 
 export const runtime = 'nodejs'
+
+async function requireAdmin() {
+  const cookieStore = await cookies()
+  const token = cookieStore.get('admin_session')?.value
+  if (!token) return null
+  return verifyAdminSession(token)
+}
 
 const contactSchema = z.object({
   name: z.string().min(1),
@@ -15,6 +24,11 @@ const contactSchema = z.object({
 })
 
 export async function GET() {
+  const session = await requireAdmin()
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   const contacts = await prisma.contact.findMany({
     orderBy: { createdAt: 'desc' },
     take: 50,

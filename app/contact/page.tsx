@@ -350,31 +350,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Final CTA */}
-      {/* <section className="py-14 md:py-20 px-4 md:px-6 bg-muted/30">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Vous cherchez à nous rejoindre ?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Consultez notre page carrières pour découvrir nos opportunités et collaborations.
-          </p>
-          <Link
-            href="/careers"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-accent text-accent font-semibold rounded-full hover:bg-accent hover:text-white transition-all duration-300 uppercase text-sm tracking-wider"
-          >
-            Voir les carrières
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
-      </section> */}
     </main>
   )
 }

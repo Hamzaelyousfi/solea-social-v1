@@ -38,9 +38,9 @@ export default function Preloader() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8"
         >
-          <h1 className="text-5xl md:text-6xl font-bold">
+          <div className="text-5xl md:text-6xl font-bold" aria-hidden>
             <span>We craft</span>
-          </h1>
+          </div>
         </motion.div>
 
         <motion.div
@@ -49,9 +49,9 @@ export default function Preloader() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8"
         >
-          <h1 className="text-5xl md:text-6xl font-bold">
+          <div className="text-5xl md:text-6xl font-bold" aria-hidden>
             <span>bold digital</span>
-          </h1>
+          </div>
         </motion.div>
 
         <motion.div
@@ -59,9 +59,9 @@ export default function Preloader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold">
+          <div className="text-5xl md:text-6xl font-bold" aria-hidden>
             <span className="text-accent">stories</span>
-          </h1>
+          </div>
         </motion.div>
 
         {/* Loading Bar */}

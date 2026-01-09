@@ -97,7 +97,7 @@ export default function AboutPage() {
             alt="Solea Socials"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background/60" />
         </div>
 
         <motion.div
