@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {['Instagram', 'LinkedIn'].map((social) => (
                 <li key={social}>
-                  <a href={social === 'Instagram' ? 'https://www.instagram.com/soleasocials/' : '#'} className="text-sm text-background/80 hover:text-background transition-colors">
+                  <a href={social === 'Instagram' ? 'https://www.instagram.com/soleasocials/' : 'https://www.linkedin.com/in/amandine-veillard-26989518a'} className="text-sm text-background/80 hover:text-background transition-colors">
                     {social}
                   </a>
                 </li>

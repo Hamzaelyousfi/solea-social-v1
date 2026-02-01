@@ -5,12 +5,14 @@ import { createAdminSessionToken, getSessionCookieOptions, isHttpsRequest, verif
 
 export const runtime = 'nodejs'
 
+// Validate admin login credentials.
 const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(1),
 })
 
 export async function POST(request: Request) {
+  // Parse and validate the JSON payload.
   const payload = await request.json()
   const parsed = loginSchema.safeParse(payload)
 
@@ -22,10 +24,12 @@ export async function POST(request: Request) {
     where: { email: parsed.data.email },
   })
 
+  // Reject invalid email/password combinations.
   if (!admin || !verifyPassword(parsed.data.password, admin.passwordHash)) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
   }
 
+  // Issue a signed session token in a cookie.
   const token = createAdminSessionToken(admin.id, admin.email)
   const response = NextResponse.json({ ok: true })
   const isSecure = isHttpsRequest(request)

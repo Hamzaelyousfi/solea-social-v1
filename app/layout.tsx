@@ -2,10 +2,9 @@
 import { Space_Grotesk as SpaceGrotesk, Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { MotionConfig, AnimatePresence } from 'framer-motion'
+import { MotionConfig } from 'framer-motion'
 import { Suspense } from 'react'
 import './globals.css'
-import Preloader from '@/components/preloader'
 import LayoutShell from '@/components/layout-shell'
 import PageviewTracker from '@/components/analytics/pageview-tracker'
 import JsonLd from '@/components/seo/json-ld'
@@ -118,9 +117,6 @@ export default function RootLayout({
           <PageviewTracker />
         </Suspense>
         <MotionConfig reducedMotion="user">
-          <AnimatePresence mode="wait">
-            <Preloader />
-          </AnimatePresence>
           <LayoutShell>{children}</LayoutShell>
         </MotionConfig>
         <Analytics />

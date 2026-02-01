@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma'
 
 export const runtime = 'nodejs'
 
+// Validate tracking payloads for page view events.
 const trackSchema = z.object({
   path: z.string().min(1),
   referrer: z.string().optional().nullable(),
@@ -11,6 +12,7 @@ const trackSchema = z.object({
   utmMedium: z.string().optional().nullable(),
 })
 
+// Map known referrers to normalized sources.
 const sourceMap: Array<{ match: RegExp; source: string }> = [
   { match: /instagram\.com/i, source: 'INSTAGRAM' },
   { match: /facebook\.com/i, source: 'FACEBOOK' },
@@ -19,6 +21,7 @@ const sourceMap: Array<{ match: RegExp; source: string }> = [
 ]
 
 function resolveSource(referrer?: string | null, utmSource?: string | null) {
+  // Prefer explicit UTM source labels, then fall back to referrer matching.
   if (utmSource) {
     const normalized = utmSource.toLowerCase()
     if (normalized.includes('instagram')) return 'INSTAGRAM'
@@ -33,12 +36,14 @@ function resolveSource(referrer?: string | null, utmSource?: string | null) {
 }
 
 export async function POST(request: Request) {
+  // Parse and validate the incoming tracking data.
   const payload = await request.json()
   const parsed = trackSchema.safeParse(payload)
   if (!parsed.success) {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
   }
 
+  // Normalize values and persist the page view.
   const { path, referrer, utmSource, utmMedium } = parsed.data
   const source = resolveSource(referrer, utmSource)
   const userAgent = request.headers.get('user-agent')
