@@ -208,7 +208,7 @@ export default function AboutPage() {
             </div>
             
             <div className="group rounded-2xl border border-accent/20 bg-background/70 px-6 py-4 backdrop-blur-md transition-all hover:border-accent/40 hover:bg-background/90">
-              <div className="text-3xl font-bold text-accent md:text-4xl">15+</div>
+              <div className="text-3xl font-bold text-accent md:text-4xl">3+</div>
               <div className="text-sm text-foreground/70">Artisans accompagnés</div>
             </div>
             

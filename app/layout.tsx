@@ -29,7 +29,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Solea Socials | Agence de Communication Digitale en Suisse Romande',
-  description: 'Solea Socials accompagne artisans et petites entreprises de Suisse romande (Yverdon, Neuchâtel, Lausanne) pour développer leur présence digitale et valoriser leur savoir-faire.',
+  description: 'Solea Socials accompagne artisans et entreprises locales de Suisse romande (Yverdon, Neuchâtel, Lausanne) pour développer leur présence digitale et valoriser leur savoir-faire.',
   generator: 'Next.js',
   metadataBase: new URL('https://soleasocials.ch'),
   icons: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solea Socials | Agence de Communication Digitale en Suisse Romande',
     description:
-      'Solea Socials accompagne artisans et petites entreprises de Suisse romande pour developper leur presence digitale.',
+      'Solea Socials accompagne artisans et entreprises locales de Suisse romande pour developper leur presence digitale.',
     url: 'https://soleasocials.ch',
     siteName: 'Solea Socials',
     locale: 'fr_CH',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Solea Socials | Agence de Communication Digitale en Suisse Romande',
     description:
-      'Solea Socials accompagne artisans et petites entreprises de Suisse romande pour developper leur presence digitale.',
+      'Solea Socials accompagne artisans et entreprises locales de Suisse romande pour developper leur presence digitale.',
   },
 }
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
+import Link from 'next/link'
 
 type HeroSectionProps = {
   founderImage?: string
@@ -137,7 +138,7 @@ export default function HeroSection({
               variants={textVariants}
             >
               Des stratégies concrètes et mesurables pour accompagner les artisans
-              et petites entreprises de Suisse romande dans leur transformation digitale.
+              et entreprises locales de Suisse romande dans leur transformation digitale.
             </motion.p>
 
             <motion.div
@@ -149,7 +150,7 @@ export default function HeroSection({
                 whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
                 whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
               >
-                <span className="relative z-10">Demander un audit gratuit</span>
+                <Link href="/contact" className="relative z-10">Demander un audit gratuit</Link>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-[#E67E50] to-[#d86a3f]"
                   initial={{ x: '-100%' }}
@@ -174,7 +175,7 @@ export default function HeroSection({
               variants={textVariants}
             >
               <div>
-                <div className="text-2xl font-bold text-neutral-900 md:text-3xl">50+</div>
+                <div className="text-2xl font-bold text-neutral-900 md:text-3xl">3+</div>
                 <div className="text-sm text-neutral-600">Clients satisfaits</div>
               </div>
               <div>

@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Solea Socials</h3>
             <p className="text-sm text-background/80 leading-relaxed">
-              Agence de communication digitale spécialisée dans l'accompagnement des artisans et petites entreprises de Suisse romande.
+              Agence de communication digitale spécialisée dans l'accompagnement des artisans et entreprises locales de Suisse romande.
             </p>
           </div>
 

@@ -150,7 +150,7 @@ export default function AdminSettingsPage() {
                 value={form.email}
                 onChange={handleChange}
                 className="w-full rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-foreground shadow-[0_14px_30px_rgba(15,15,15,0.12)] backdrop-blur-xl focus:border-white/80 focus:outline-none"
-                placeholder="admin@solea.local"
+                placeholder="admin@xsoleasocials.ch"
                 required
               />
             </div>

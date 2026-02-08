@@ -28,17 +28,17 @@ export const projects: Project[] = [
   {
     slug: 'makemebeautiful',
     title: 'Makemebeautiful',
-    sector: 'Institut de beaute',
+    sector: 'Institut de beauté',
     description:
-      "Strategie social media et community management pour mettre en avant l'humain et les moments vrais. Les reels humoristiques et storytelling ont declenche une forte hausse de visibilite en deux mois.",
+      "Stratégie social media et community management pour mettre en avant l'humain et les moments vrais. Les reels humoristiques et storytelling ont déclenché une forte hausse de visibilité en deux mois.",
       mediaType: 'video',
       image: {
       src: '/projects/réel-laser.webm',
-      alt: 'Makemebeautiful - visuels reels et storytelling',
+      alt: 'Makemebeautiful - visuels Reels et storytelling',
     },
     metrics: [
       { label: 'Vues', value: '150K en 2 mois' },
-      { label: 'Comptes touches', value: '+99%' },
+      { label: 'Comptes touchés', value: '+99%' },
       { label: 'Vues non-followers', value: '+30%' },
       { label: 'Visites profil', value: '+13%' },
       { label: 'Clics externes', value: '+7.1%' },
@@ -48,10 +48,10 @@ export const projects: Project[] = [
         title: 'Reel humoristique - backstage institut',
         format: 'Reel Instagram',
         url: 'https://www.instagram.com/reel/makemebeautiful-1',
-        note: 'Ton leger pour maximiser les partages',
+        note: 'Ton léger pour maximiser les partages',
       },
       {
-        title: 'Reel humoristique - avant/apres',
+        title: 'Reel humoristique - avant/après',
         format: 'Reel Instagram',
         url: 'https://www.instagram.com/reel/makemebeautiful-2',
         note: 'Format court avec surprise',
@@ -63,35 +63,35 @@ export const projects: Project[] = [
         note: 'Focus sur la dimension humaine',
       },
       {
-        title: "Reel storytelling - equipe de l'institut",
+        title: "Reel storytelling - équipe de l'institut",
         format: 'Reel Instagram',
         url: 'https://www.instagram.com/reel/makemebeautiful-4',
-        note: 'Authenticite et proximite',
+        note: 'Authenticité et proximité',
       },
     ],
   },
   {
     slug: 'ide-sport',
-    title: 'Ide Sport',
-    sector: 'Fondation IdeeSport - evenements sportifs',
+    title: 'Idée Sport',
+    sector: 'Fondation Idée Sport - événements sportifs',
     description:
-      "Creation de contenu original (reels et videos) pour des evenements sportifs nocturnes. Une narration energique qui valorise l'ambiance locale et l'impact social du projet.",
+      "Création de contenu pour une fondation qui utilise le sport pour promouvoir la santé, l'intégration et la prévention des dépendances chez les jeunes.",
       mediaType: 'video',
       image: {
       src: '/projects/ide-sport.webm',
-      alt: 'ide-sport - contenus evenements sportifs',
+      alt: 'Idée Sport - contenus événements sportifs',
     },
     metrics: [{ label: 'Vues', value: '+2 300' }],
     contents: [
       {
-        title: 'Reel evenement - highlights terrain',
+        title: 'Reel événement - highlights terrain',
         format: 'Reel Instagram',
         url: 'https://www.instagram.com/reel/midnight-club-1',
         note: 'Cadences rapides et ambiance',
       },
       {
-        title: 'Video recap - engagement jeunes',
-        format: 'Video 9:16',
+        title: 'Vidéo recap - engagement jeunes',
+        format: 'Vidéo 9:16',
         url: 'https://www.instagram.com/reel/midnight-club-2',
         note: 'Message positif et inclusif',
       },
@@ -102,11 +102,11 @@ export const projects: Project[] = [
     title: 'Visitaly',
     sector: 'Restaurant',
     description:
-      'Strategie complete avec creation de contenu, gestion des reseaux et calendrier editorial pour renforcer la desirabilite et la reconnaissance locale.',
+      'Stratégie complète avec création de contenu, gestion des réseaux et calendrier éditorial pour renforcer la désirabilité et la reconnaissance locale.',
     mediaType: 'video',
     image: {
       src: '/projects/Visitaly.webm',
-      alt: 'Visitaly - identite visuelle restaurant',
+      alt: 'Visitaly - identité visuelle restaurant',
     },
     metrics: [
       { label: 'Followers', value: '+62% en 1 an' },
@@ -114,16 +114,16 @@ export const projects: Project[] = [
     ],
     contents: [
       {
-        title: 'Reel signature - experience en salle',
+        title: 'Reel signature - expérience en salle',
         format: 'Reel Instagram',
         url: 'https://www.instagram.com/reel/visitaly-1',
         note: 'Narration immersive',
       },
       {
-        title: 'Video TikTok - focus cuisine',
+        title: 'Vidéo TikTok - focus cuisine',
         format: 'TikTok 9:16',
         url: 'https://www.tiktok.com/@visitaly/video/1',
-        note: 'Identite graphique renforcee',
+        note: 'Identité graphique renforcée',
       },
     ],
   },

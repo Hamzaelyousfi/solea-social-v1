@@ -20,6 +20,7 @@ type WorkPageContentProps = {
 }
 
 type ProjectNarrative = {
+  challengeHeadline: string
   challenge: string
   approach: string
   resultsNote: string
@@ -43,46 +44,50 @@ const sectionPadding = 'px-6 md:px-10 lg:px-16'
 
 const projectNarratives: Record<string, ProjectNarrative> = {
   makemebeautiful: {
+    challengeHeadline: "Repositionner l'institut comme une référence locale",
     challenge:
-      "Repositionner l'institut comme une reference locale en valorisant la proximite, les soins sur-mesure et la personnalite de l'equipe.",
+      "Repositionner l'institut comme une référence locale en valorisant la proximité, les soins sur-mesure et la personnalité de l'équipe.",
     approach:
-      "Reels narratifs, humour subtil et contenus educatifs courts pour multiplier les points de contact. Une presence quotidienne qui humanise la marque.",
+      'Reels narratifs, humour subtil et contenus éducatifs courts pour multiplier les points de contact. Une présence quotidienne qui humanise la marque.',
     resultsNote:
-      "Une dynamique virale construite sur des sequences courtes, des reels a fort taux de partage et une signature visuelle douce.",
+      'Une dynamique virale construite sur des séquences courtes, des reels à fort taux de partage et une signature visuelle douce.',
     services: [
       'Branding + Social Media Management',
       'Content Creation + Community Management',
     ],
-    quote: '« Une ligne editoriale qui nous ressemble et qui performe. »',
+    quote: '« Une ligne éditoriale qui nous ressemble et qui performe. »',
     supportImages: ['/projects/makemebeautiful/image-1.jpg', '/projects/makemebeautiful/image-2.jpg'],
     approachImages: ['/solea/DSC00429.JPG', '/solea/DSC00443.JPG'],
     poster: '/creative-studio-content.jpg',
   },
   visitaly: {
+    challengeHeadline: "Visitaly devait s'humaniser",
     challenge:
-      "Reveiller la desirabilite du restaurant avec un storytelling gourmand et regulier, capable de convertir l'audience locale en reservations.",
+      "Réveiller la désirabilité du restaurant avec un storytelling gourmand et régulier, capable de convertir l'audience locale en réservations.",
     approach:
-      'Shooting culinaire premium, reels immersifs en salle et calendrier editorial precis pour stabiliser la croissance.',
+      'Shooting culinaire premium, reels immersifs en salle et calendrier éditorial précis pour stabiliser la croissance.',
     resultsNote:
-      'Une presence fluide sur Instagram et TikTok, avec des formats courts qui mettent en scene la convivialite et le savoir-faire.',
+      'Une présence fluide sur Instagram et TikTok, avec des formats courts qui mettent en scène la convivialité et le savoir-faire.',
     services: [
       'Content Creation + Community Management',
-      'Strategie editoriale + Calendrier social',
+      'Stratégie éditoriale + Calendrier social',
     ],
-    quote: '« Les contenus donnent envie de reserver en quelques secondes. »',
+    quote:
+      '« On a découvert ce restaurant grâce à une vidéo Instagram et on a adoré ! On reviendra »',
     supportImages: ['/projects/visitaly/width_800.webp', '/projects/visitaly/width800.webp'],
     approachImages: ['/solea/DSC00437.JPG', '/solea/DSC00452.JPG'],
     poster: '/creative-studio-content.jpg',
   },
   'ide-sport': {
+    challengeHeadline: 'Le Midnight Echallens devait se dynamiser',
     challenge:
-      "Generer une energie collective autour des evenements nocturnes et incarner l'impact social du projet.",
+      "Générer une énergie collective autour des événements nocturnes et incarner l'impact social du projet.",
     approach:
-      "Captations video dynamiques, reels 9:16 et teasing en amont pour renforcer la participation sur le terrain.",
+      'Captations vidéo dynamiques, reels 9:16 et teasing en amont pour renforcer la participation sur le terrain.',
     resultsNote:
-      "Des sequences rythmees, une tonalite jeune et une mise en avant de l'ambiance locale.",
-    services: ['Production video + Coverage evenementiel', 'Strategy + Social'],
-    quote: '« Une narration authentique qui mobilise toute la communaute. »',
+      "Des séquences rythmées, une tonalité jeune et une mise en avant de l'ambiance locale.",
+    services: ['Production vidéo + Coverage événementiel', 'Strategy + Social'],
+    quote: '« Une narration authentique qui mobilise toute la communauté. »',
     supportImages: [
       '/projects/ideesport/CoachProgramm.jpg',
       '/projects/ideesport/ideesport_CoachProgr.png',
@@ -286,10 +291,10 @@ const VideoSurface = ({
             kind="captions"
             src="/captions/portfolio.vtt"
             srcLang="fr"
-            label="Francais"
+            label="Français"
             default
           />
-          Votre navigateur ne supporte pas la lecture video.
+          Votre navigateur ne supporte pas la lecture vidéo.
         </video>
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
@@ -592,7 +597,7 @@ const ChallengeSection = ({
           id={`${project.slug}-challenge`}
           className="mt-4 text-3xl font-semibold text-neutral-900 md:text-4xl"
         >
-          {project.title} devait changer de rythme.
+          {narrative.challengeHeadline}
         </h3>
         <p className="mt-4 text-base text-neutral-600 md:text-lg">
           {narrative.challenge}
@@ -634,7 +639,7 @@ const ResultsSection = ({
           transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: 'easeOut' }}
         >
           <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
-            Resultats
+            Résultats
           </p>
           <h3
             id={`${project.slug}-results`}
@@ -665,7 +670,7 @@ const ResultsSection = ({
             >
               <ImageFrame
                 src={image}
-                alt={`${project.title} avant apres`}
+                alt={`${project.title} avant après`}
                 sizes="(max-width: 1024px) 45vw, 260px"
                 className="rounded-[24px]"
               />
@@ -694,17 +699,17 @@ const buildShowcaseCards = (project: Project): ShowcaseCard[] => {
     {
       title: 'Carousel storytelling',
       format: 'Carousel Instagram',
-      note: 'Narration et education en 6 slides.',
+      note: 'Narration et éducation en 6 slides.',
     },
     {
       title: 'Reel teaser',
       format: 'Reel 9:16',
-      note: 'Accroche rapide pour booster la portee.',
+      note: 'Accroche rapide pour booster la portée.',
     },
     {
       title: 'Story de lancement',
       format: 'Stories',
-      note: 'CTA clair pour generer des actions.',
+      note: 'CTA clair pour générer des actions.',
     },
   ]
 
@@ -756,7 +761,7 @@ export default function WorkPageContent({ projects }: WorkPageContentProps) {
             <p className="text-xs uppercase tracking-[0.35em] text-white/60">
               Audit gratuit
             </p>
-            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+            <h2 className="mt-2 text-3xl font-semibold md:text-4xl">
               Prêt à faire briller votre marque ?
             </h2>
             <p className="mt-4 max-w-2xl text-base text-white/75 md:text-lg">

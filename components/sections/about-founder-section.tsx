@@ -75,7 +75,7 @@ export default function AboutFounderSection() {
                 className="space-y-4 mb-8 text-lg leading-relaxed text-foreground/70"
               >
                 <p>
-                  Je suis spécialisée en communication digitale pour artisans et petites entreprises. 
+                  Je suis spécialisée en communication digitale pour artisans et entreprises locales. 
                   Après plusieurs années dans le marketing digital, j'ai fondé Solea Socials avec une 
                   mission simple : aider les talents locaux à être vus et reconnus en ligne.
                 </p>

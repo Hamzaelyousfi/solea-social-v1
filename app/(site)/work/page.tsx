@@ -4,9 +4,9 @@ import WorkPageContent from './work-page-content'
 import { projects, type Project } from './projects'
 
 export const metadata: Metadata = {
-  title: 'Nos realisations | Solea Socials',
+  title: 'Nos réalisations | Solea Socials',
   description:
-    'Decouvrez les resultats reels obtenus pour des artisans et petites entreprises en Suisse romande.',
+    'Découvrez les résultats réels obtenus pour des artisans et entreprises locales en Suisse romande.',
 }
 
 async function getProjects(): Promise<Project[]> {
