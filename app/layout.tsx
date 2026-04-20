@@ -1,6 +1,7 @@
 
 import { Space_Grotesk as SpaceGrotesk, Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { MotionConfig } from 'framer-motion'
 import { Suspense } from 'react'
@@ -120,6 +121,9 @@ export default function RootLayout({
           <LayoutShell>{children}</LayoutShell>
         </MotionConfig>
         <Analytics />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   )
