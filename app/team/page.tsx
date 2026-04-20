@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
+import Image from 'next/image'
 import SectionTitle from '@/components/section-title'
 import { Mail, Linkedin } from 'lucide-react'
 
@@ -13,7 +14,7 @@ const leadership = [
     name: 'Amandine Veillard',
     role: 'Fondatrice & consultante en communication digitale',
     location: 'Suisse romande',
-    image: '/solea/DSC00488.JPG',
+    image: '/solea/DSC00488.webp',
     bio: 'J\'accompagne les artisans et les petites structures à clarifier leur message et à le traduire en contenus élégants, utiles et cohérents.',
   },
 ]
@@ -62,11 +63,13 @@ export default function TeamPage() {
                 onMouseLeave={() => setHoveredId(null)}
               >
                 <div className="relative overflow-hidden rounded-lg mb-6">
-                  <div className="aspect-square bg-gradient-to-br from-accent/10 to-accent/5">
-                    <img
+                  <div className="relative aspect-square bg-gradient-to-br from-accent/10 to-accent/5">
+                    <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
                     />
                   </div>
                   <motion.div

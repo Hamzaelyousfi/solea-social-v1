@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import SectionTitle from '@/components/section-title'
 import Container from '../container'
 import Section from '../section'
+import Image from 'next/image'
 
 const benefits = [
   {
@@ -82,11 +83,13 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               className="hidden md:block"
             >
-              <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500">
-                <img
-                  src="/solea/DSC00412.JPG"
+              <div className="relative h-[500px] rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500">
+                <Image
+                  src="/solea/DSC00412.webp"
                   alt="Flexible et réactif"
-                  className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </motion.div>
@@ -130,11 +133,13 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               className="block md:hidden"
             >
-              <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500">
-                <img
-                  src="/solea/DSC00412.JPG"
+              <div className="relative h-[350px] rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group hover:shadow-accent/20 hover:border-accent/30 transition-all duration-500">
+                <Image
+                  src="/solea/DSC00412.webp"
                   alt="Flexible et réactif"
-                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </motion.div>

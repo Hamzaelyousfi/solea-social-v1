@@ -6,6 +6,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animation-variants'
 import Container from '../container'
 import Section from '../section'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   {
@@ -109,11 +110,13 @@ export default function ServicesSection() {
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               {/* Image - 40% */}
               <div className="w-full md:w-2/5">
-                <div className="relative rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group">
-                  <img
-                    src="/solea/DSC00488.JPG"
+                <div className="relative h-[400px] rounded-3xl overflow-hidden border-2 border-accent/20 shadow-2xl group">
+                  <Image
+                    src="/solea/DSC00488.webp"
                     alt="Création de contenu professionnel"
-                    className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent pointer-events-none" />
                 </div>

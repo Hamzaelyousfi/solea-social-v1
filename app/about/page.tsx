@@ -33,7 +33,7 @@ const differentiators = [
       'Chez Solea Socials, vous travaillez directement avec moi, Amandine.',
       'Pas de templates génériques. Chaque projet reçoit une attention personnelle.',
     ],
-    image: '/solea/DSC00443.JPG',
+    image: '/solea/DSC00443.webp',
     alt: 'Approche personnelle',
     imageOrder: 'md:order-2',
     textOrder: 'md:order-1',
@@ -44,7 +44,7 @@ const differentiators = [
       'Les clients veulent du vrai, pas du marketing agressif.',
       'Photos sur site, vidéos du processus, textes simples et authentiques.',
     ],
-    image: '/solea/DSC00473.JPG',
+    image: '/solea/DSC00473.webp',
     alt: 'Contenu authentique',
     imageOrder: 'md:order-1',
     textOrder: 'md:order-2',
@@ -55,7 +55,7 @@ const differentiators = [
       'Audit initial gratuit, plan d\'action simple, suivi régulier.',
       'Vous gardez le contrôle, je m\'occupe de l\'exécution.',
     ],
-    image: '/solea/DSC00437.JPG',
+    image: '/solea/DSC00437.webp',
     alt: 'Stratégie et résultats',
     imageOrder: 'md:order-2',
     textOrder: 'md:order-1',
@@ -136,7 +136,7 @@ export default function AboutPage() {
         >
           <div className="relative h-full w-full">
             <Image
-              src="/solea/DSC00456.JPG"
+              src="/solea/DSC00456.webp"
               alt="Solea Socials - Notre équipe"
               fill
               priority
@@ -262,11 +262,13 @@ export default function AboutPage() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="relative"
               >
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent/10 shadow-xl">
-                  <img
-                    src="/solea/DSC00488.JPG"
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent/10 shadow-xl">
+                  <Image
+                    src="/solea/DSC00488.webp"
                     alt="Amandine Veillard"
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl -z-10" />
@@ -386,8 +388,8 @@ export default function AboutPage() {
                   transition={{ delay: 0.2, duration: 0.8 }}
                   className={`${diff.imageOrder}`}
                 >
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border-2 border-accent/10 shadow-xl">
-                    <img src={diff.image} alt={diff.alt} className="w-full h-full object-cover" />
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-accent/10 shadow-xl">
+                    <Image src={diff.image} alt={diff.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                   </div>
                 </motion.div>
 
@@ -575,11 +577,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-accent/10 shadow-2xl">
-                <img
-                  src="/solea/DSC00506.JPG"
+              <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-accent/10 shadow-2xl">
+                <Image
+                  src="/solea/DSC00506.webp"
                   alt="Vision Solea Socials"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
                 />
               </div>
             </motion.div>

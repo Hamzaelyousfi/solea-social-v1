@@ -10,6 +10,7 @@ import Logo from '@/components/Logo'
 const menuItems = [
   { label: 'Services', href: '/services' },
   { label: 'Notre Approche', href: '/work' },
+  { label: 'Blog', href: '/blog' },
   { label: 'A propos', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]

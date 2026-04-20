@@ -6,6 +6,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animation-variants'
 import Container from '../container'
 import Section from '../section'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutFounderSection() {
   const imageVariants = {
@@ -32,11 +33,13 @@ export default function AboutFounderSection() {
               variants={imageVariants}
               className="order-2 md:order-1"
             >
-              <div className="relative rounded-3xl border-2 border-accent/15 shadow-2xl overflow-hidden group">
-                <img
-                  src="/solea/DSC00429.JPG"
+              <div className="relative h-[800px] rounded-3xl border-2 border-accent/15 shadow-2xl overflow-hidden group">
+                <Image
+                  src="/solea/DSC00429.webp"
                   alt="Fondatrice Solea Socials"
-                  className="w-full h-[800px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               {/* Optional secondary image overlay */}

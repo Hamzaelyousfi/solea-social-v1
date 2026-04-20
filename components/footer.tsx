@@ -25,6 +25,7 @@ export default function Footer() {
               {[
                 { label: 'Services', href: '/services' },
                 { label: 'Notre Approche', href: '/work' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'A propos', href: '/about' },
                 { label: 'Contact', href: '/contact' },
               ].map((link) => (

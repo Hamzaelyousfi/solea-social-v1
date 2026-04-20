@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -63,10 +64,13 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative overflow-hidden px-4 md:px-6 py-16 md:py-24">
         <div className="absolute inset-0">
-          <img
-            src="/solea/DSC00456.JPG"
+          <Image
+            src="/solea/DSC00456.webp"
             alt="Solea Socials"
-            className="w-full h-full object-cover"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
         </div>

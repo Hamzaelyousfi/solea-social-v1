@@ -49,6 +49,36 @@ model Contact {
   @@index([status, createdAt])
 }
 
+enum BlogPostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id          String         @id @default(cuid())
+  slug        String         @unique
+  title       String
+  excerpt     String
+  category    String
+  coverImage  String?
+  coverEmoji  String         @default("📝")
+  coverFrom   String         @default("from-orange-400")
+  coverTo     String         @default("to-rose-400")
+  author      String         @default("Amandine Veillard")
+  authorRole  String         @default("Fondatrice de Solea Socials")
+  readTime    Int            @default(5)
+  tags        String[]
+  content     Json           @default("[]")
+  featured    Boolean        @default(false)
+  status      BlogPostStatus @default(DRAFT)
+  publishedAt DateTime?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([slug])
+}
+
 model PageView {
   id        String        @id @default(cuid())
   path      String

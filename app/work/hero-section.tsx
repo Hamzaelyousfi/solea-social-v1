@@ -13,7 +13,7 @@ type HeroSectionProps = {
 }
 
 export default function HeroSection({
-  founderImage = '/solea/amandine-bg.png',
+  founderImage = '/solea/amandine-bg.webp',
   founderName = 'Amandine',
   founderTitle = 'Fondatrice de Solea Socials'
 }: HeroSectionProps) {
@@ -159,14 +159,14 @@ export default function HeroSection({
                 />
               </motion.button>
 
-              <motion.a
-                href="#realisations"
+              <motion.button
+                onClick={() => document.getElementById('realisations')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group flex items-center gap-2 font-medium text-neutral-700 transition-colors hover:text-[#E67E50]"
                 whileHover={prefersReducedMotion ? {} : { x: 5 }}
               >
                 <span>Voir nos réalisations</span>
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Stats/Social proof */}

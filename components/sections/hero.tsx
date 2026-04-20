@@ -269,7 +269,7 @@ export default function Hero() {
               >
                 <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[600px]">
                   <Image
-                    src="/solea/DSC00437.JPG"
+                    src="/solea/DSC00437.webp"
                     alt="Professionnelle travaillant sur son ordinateur - Solea Socials"
                     fill
                     priority
