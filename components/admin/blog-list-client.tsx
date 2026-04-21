@@ -211,6 +211,7 @@ export default function BlogListClient({ posts: initial }: { posts: SerializedPo
                     src={selected.coverImage}
                     alt={selected.title}
                     fill
+                    unoptimized
                     sizes="400px"
                     className="object-cover"
                   />

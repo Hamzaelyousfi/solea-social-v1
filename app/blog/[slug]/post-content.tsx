@@ -153,6 +153,7 @@ export default function PostContent({ post, relatedPosts }: Props) {
                 alt={post.title}
                 fill
                 priority
+                unoptimized
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover"
               />
@@ -253,6 +254,7 @@ export default function PostContent({ post, relatedPosts }: Props) {
                           src={related.coverImage}
                           alt={related.title}
                           fill
+                          unoptimized
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />

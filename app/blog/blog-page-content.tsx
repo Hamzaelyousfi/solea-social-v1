@@ -55,6 +55,7 @@ function PostCard({ post }: { post: BlogPostSerialized }) {
               src={post.coverImage}
               alt={post.title}
               fill
+              unoptimized
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
@@ -231,6 +232,7 @@ export default function BlogPageContent({ posts }: Props) {
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
                         fill
+                        unoptimized
                         sizes="(max-width: 768px) 100vw, 40vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
