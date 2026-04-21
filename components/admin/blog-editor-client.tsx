@@ -145,6 +145,7 @@ function CoverUploader({
               src={value}
               alt="Couverture"
               fill
+              unoptimized
               sizes="400px"
               className="object-cover"
             />
