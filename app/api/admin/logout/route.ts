@@ -5,7 +5,7 @@ export const runtime = 'nodejs'
 
 export async function POST(request: Request) {
   // Redirect back to login and clear the session cookie.
-  const response = NextResponse.redirect(new URL('/admin/login', request.url))
+  const response = NextResponse.redirect(new URL('/admin/login', process.env.NEXT_PUBLIC_BASE_URL || request.url))
   const isSecure = isHttpsRequest(request)
   response.cookies.set(getSessionCookieOptions(isSecure).name, '', {
     ...getSessionCookieOptions(isSecure),
